@@ -14,4 +14,8 @@ public class UserTableAccessor {
             throws ConditionalCheckFailedException {
         mapper.save(userItem);
     }
+
+    public UserItem getUser(String username) {
+        return mapper.load(UserItem.class, username);
+    }
 }

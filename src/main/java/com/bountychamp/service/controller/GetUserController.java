@@ -12,20 +12,15 @@ import java.util.Map;
 
 @RestController
 @EnableWebMvc
-public class CreateUserController {
-    @RequestMapping(path = "/create-user", method = RequestMethod.GET)
-    public Map<String, String> createUser(String username, String email, String password) {
-
-//        UserItem userItem = new UserItem(username, email, password);
-        UserItem userItem = new UserItem();
-        userItem.setUsername(username);
-        userItem.setEmail(email);
-        userItem.setPassword(password);
+public class GetUserController {
+    @RequestMapping(path = "/get-user", method = RequestMethod.GET)
+    public Map<String, String> getUser(String username) {
         UserTableAccessor userTableAccessor = new UserTableAccessor();
-        userTableAccessor.addUser(userItem);
+        UserItem user = userTableAccessor.getUser(username);
 
         Map<String, String> out = new HashMap<>();
-        out.put("sample user created!", "woohoo!");
+        out.put("username", user.getUsername());
+        out.put("email", user.getEmail());
         return out;
     }
 }
