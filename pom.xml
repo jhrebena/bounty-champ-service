@@ -98,12 +98,14 @@
             <version>${log4j.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <version>4.13</version>
             <scope>test</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.projectlombok</groupId>
