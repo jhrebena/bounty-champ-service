@@ -1,13 +1,12 @@
-package com.bountychamp.userservice.dynamodb;
+package com.bountychamp.service.dynamodb;
 
-import java.util.Set;
 import java.util.UUID;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.bountychamp.userservice.dynamodb.DDBConstants.USER_TABLE_NAME;
+import static com.bountychamp.service.dynamodb.DDBConstants.USER_TABLE_NAME;
 
 @Getter
 @Setter

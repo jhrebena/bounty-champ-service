@@ -1,4 +1,4 @@
-package com.bountychamp.userservice;
+package com.bountychamp.service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 // We use direct @Import instead of @ComponentScan to speed up cold starts
-@ComponentScan("com.bountychamp.userservice.controller")
+@ComponentScan("com.bountychamp.service.controller")
 //@Import({ PingController.class, CreateUserController.class, UpdateUserController.class, LoginController.class})
 public class SpringApiConfig {
     /*

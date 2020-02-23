@@ -1,4 +1,4 @@
-package com.bountychamp.userservice.dynamodb;
+package com.bountychamp.service.dynamodb;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;

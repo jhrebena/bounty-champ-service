@@ -1,4 +1,4 @@
-package com.bountychamp.userservice;
+package com.bountychamp.service;
 
 
 import com.amazonaws.serverless.exceptions.ContainerInitializationException;

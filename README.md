@@ -1,5 +1,5 @@
-# bounty-champ-user-service serverless API
-The bounty-champ-user-service project, created with [`aws-serverless-java-container`](https://github.com/awslabs/aws-serverless-java-container).
+# bounty-champ-service serverless API
+The bounty-champ-service project, created with [`aws-serverless-java-container`](https://github.com/awslabs/aws-serverless-java-container).
 
 The starter project defines a simple `/ping` resource that can accept `GET` requests with its tests.
 
@@ -7,8 +7,8 @@ The project folder also includes a `sam.yaml` file. You can use this [SAM](https
 
 Using [Maven](https://maven.apache.org/), you can create an AWS Lambda-compatible zip file simply by running the maven package command from the project folder.
 ```bash
-$ mvn archetype:generate -DartifactId=bounty-champ-user-service -DarchetypeGroupId=com.amazonaws.serverless.archetypes -DarchetypeArtifactId=aws-serverless-spring-archetype -DarchetypeVersion=1.4 -DgroupId=com.bountychamp.userservice -Dversion=1.0-SNAPSHOT -Dinteractive=false
-$ cd bounty-champ-user-service
+$ mvn archetype:generate -DartifactId=bounty-champ-service -DarchetypeGroupId=com.amazonaws.serverless.archetypes -DarchetypeArtifactId=aws-serverless-spring-archetype -DarchetypeVersion=1.4 -DgroupId=com.bountychamp.service -Dversion=1.0-SNAPSHOT -Dinteractive=false
+$ cd bounty-champ-service
 $ mvn clean package
 
 [INFO] ------------------------------------------------------------------------
@@ -79,8 +79,8 @@ $ aws cloudformation describe-stacks --stack-name ServerlessSpringApi
             "Outputs": [
                 {
                     "Description": "URL for application",
-                    "ExportName": "BountyChampUserServiceApi",
-                    "OutputKey": "BountyChampUserServiceApi",
+                    "ExportName": "BountyChampServiceApi",
+                    "OutputKey": "BountyChampServiceApi",
                     "OutputValue": "https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping"
                 }
             ], 

@@ -1,5 +1,4 @@
-package com.bountychamp.userservice;
-
+package com.bountychamp.service;
 
 import com.amazonaws.serverless.proxy.internal.LambdaContainerHandler;
 import com.amazonaws.serverless.proxy.internal.testutils.AwsProxyRequestBuilder;
@@ -20,7 +19,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import static org.junit.Assert.*;
-
 
 public class StreamLambdaHandlerTest {
 
