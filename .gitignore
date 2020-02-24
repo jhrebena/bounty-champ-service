@@ -1,4 +1,4 @@
-# Don't track content of these folders
+# Don't track content of these directories
 node_modules/
 target/
 
@@ -6,6 +6,7 @@ target/
 ##############
 output-sam.yaml
 package-lock.json
+.DS_Store
 
 # Compiled source #
 ###################
