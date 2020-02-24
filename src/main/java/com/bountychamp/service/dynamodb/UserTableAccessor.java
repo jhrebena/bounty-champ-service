@@ -5,6 +5,8 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
 
+import java.util.UUID;
+
 public class UserTableAccessor {
 
     AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
@@ -15,7 +17,7 @@ public class UserTableAccessor {
         mapper.save(userItem);
     }
 
-    public UserItem getUser(String username) {
-        return mapper.load(UserItem.class, username);
+    public UserItem getUser(String hashKey) {
+        return mapper.load(UserItem.class, UUID.fromString(hashKey));
     }
 }

@@ -14,9 +14,9 @@ import java.util.Map;
 @EnableWebMvc
 public class GetUserController {
     @RequestMapping(path = "/get-user", method = RequestMethod.GET)
-    public Map<String, String> getUser(String username) {
+    public Map<String, String> getUser(String userId) {
         UserTableAccessor userTableAccessor = new UserTableAccessor();
-        UserItem user = userTableAccessor.getUser(username);
+        UserItem user = userTableAccessor.getUser(userId);
 
         Map<String, String> out = new HashMap<>();
         out.put("username", user.getUsername());
