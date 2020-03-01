@@ -1,6 +1,5 @@
 package com.bountychamp.service.controller;
 
-import com.bountychamp.service.dynamodb.UserItem;
 import com.bountychamp.service.dynamodb.UserTableAccessor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,20 +11,14 @@ import java.util.Map;
 
 @RestController
 @EnableWebMvc
-public class CreateUserController {
-    @RequestMapping(path = "/create-user", method = RequestMethod.GET)
-    public Map<String, String> createUser(String username, String email, String password) {
-
-        UserItem userItem = new UserItem();
-        userItem.setUsername(username);
-        userItem.setEmail(email);
-        userItem.setPassword(password);
-
+public class DeleteUserController {
+    @RequestMapping(path = "/delete-user", method = RequestMethod.GET)
+    public Map<String, String> createUser(String userId) {
         UserTableAccessor userTableAccessor = new UserTableAccessor();
-        userTableAccessor.addUser(userItem);
+        userTableAccessor.deleteUser(userId);
 
         Map<String, String> out = new HashMap<>();
-        out.put("sample user created!", "woohoo!");
+        out.put("deleted user", userId);
         return out;
     }
 }

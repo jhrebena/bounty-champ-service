@@ -17,7 +17,13 @@ public class UserTableAccessor {
         mapper.save(userItem);
     }
 
-    public UserItem getUser(String hashKey) {
-        return mapper.load(UserItem.class, UUID.fromString(hashKey));
+    public UserItem getUser(String userId) {
+        return mapper.load(UserItem.class, UUID.fromString(userId));
+    }
+
+    public void deleteUser(String userId) {
+        UserItem user = new UserItem();
+        user.setUserId(UUID.fromString(userId));
+        mapper.delete(user);
     }
 }
