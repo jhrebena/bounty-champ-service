@@ -1,28 +1,30 @@
-package com.bountychamp.service.dynamodb;
+package com.bountychamp.service.dynamodb.accessors;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
+import com.bountychamp.service.dynamodb.dto.UserItem;
 
 import java.util.UUID;
 
-public class BountyTableAccessor {
+public class UserTableAccessor {
+
     AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
     DynamoDBMapper mapper = new DynamoDBMapper(client);
 
-    public void addBounty(BountyItem bountyItem)
+    public void addUser(UserItem userItem)
             throws ConditionalCheckFailedException {
-        mapper.save(bountyItem);
+        mapper.save(userItem);
     }
 
-    public BountyItem getBounty(String bountyId) {
-        return mapper.load(BountyItem.class, UUID.fromString(bountyId));
+    public UserItem getUser(String userId) {
+        return mapper.load(UserItem.class, UUID.fromString(userId));
     }
 
-    public void deleteBounty(String bountyId) {
-        BountyItem bounty = new BountyItem();
-        bounty.setBountyId(UUID.fromString(bountyId));
-        mapper.delete(bounty);
+    public void deleteUser(String userId) {
+        UserItem user = new UserItem();
+        user.setUserId(UUID.fromString(userId));
+        mapper.delete(user);
     }
 }

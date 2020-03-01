@@ -1,7 +1,7 @@
-package com.bountychamp.service.controller;
+package com.bountychamp.service.controller.bounty;
 
-import com.bountychamp.service.dynamodb.BountyItem;
-import com.bountychamp.service.dynamodb.BountyTableAccessor;
+import com.bountychamp.service.dynamodb.dto.BountyItem;
+import com.bountychamp.service.dynamodb.accessors.BountyTableAccessor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +22,7 @@ public class CreateBountyController {
         bountyItem.setCategory(category);
         bountyItem.setDescription(description);
         bountyItem.setAmountInCents(amountInCents);
+        bountyItem.setBountyStatus(BountyItem.BountyStatus.IN_PROGRESS);
 
         BountyTableAccessor bountyTableAccessor = new BountyTableAccessor();
         bountyTableAccessor.addBounty(bountyItem);

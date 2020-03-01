@@ -1,4 +1,4 @@
-package com.bountychamp.service.controller;
+package com.bountychamp.service.controller.user;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

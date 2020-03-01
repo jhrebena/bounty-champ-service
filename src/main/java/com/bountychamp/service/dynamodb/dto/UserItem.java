@@ -1,4 +1,4 @@
-package com.bountychamp.service.dynamodb;
+package com.bountychamp.service.dynamodb.dto;
 
 import java.util.UUID;
 

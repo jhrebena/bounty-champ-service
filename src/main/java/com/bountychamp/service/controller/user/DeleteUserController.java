@@ -1,6 +1,6 @@
-package com.bountychamp.service.controller;
+package com.bountychamp.service.controller.user;
 
-import com.bountychamp.service.dynamodb.UserTableAccessor;
+import com.bountychamp.service.dynamodb.accessors.UserTableAccessor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
