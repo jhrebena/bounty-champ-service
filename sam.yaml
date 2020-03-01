@@ -33,6 +33,16 @@ Resources:
         - AttributeName: "UserId"
           KeyType: "HASH"
       BillingMode: PAY_PER_REQUEST
+  BountyTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      AttributeDefinitions:
+        - AttributeName: "BountyId"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "BountyId"
+          KeyType: "HASH"
+      BillingMode: PAY_PER_REQUEST
 
 Outputs:
   PingApi:
