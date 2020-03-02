@@ -28,21 +28,35 @@ Resources:
     Properties:
       AttributeDefinitions:
         - AttributeName: "UserId"
-          AttributeType: "S"
+          AttributeType: S
       KeySchema:
         - AttributeName: "UserId"
-          KeyType: "HASH"
+          KeyType: HASH
       BillingMode: PAY_PER_REQUEST
   BountyTable:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
         - AttributeName: "BountyId"
-          AttributeType: "S"
+          AttributeType: S
+        - AttributeName: "CreatorId"
+          AttributeType: S
+        - AttributeName: "CreateDate"
+          AttributeType: S
       KeySchema:
         - AttributeName: "BountyId"
-          KeyType: "HASH"
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: gsi-CreatorId-CreateDate
+          KeySchema:
+            - AttributeName: "CreatorId"
+              KeyType: HASH
+            - AttributeName: "CreateDate"
+              KeyType: RANGE
+          Projection:
+            ProjectionType: "ALL"
       BillingMode: PAY_PER_REQUEST
+
 
 Outputs:
   PingApi:
